@@ -1,0 +1,69 @@
+<main class="footer">
+    <div class="menu-block">
+        <div class="contacts" style="margin-top: 20px;">
+            <p>+380 63 650 29 87</p>
+            <p>info@afribaggage.com</p>
+            <p></p>
+        </div>
+        <div class="services">
+            <h1>Services</h1>
+            <p>Air Transport</p>
+            <p>Ocean Transport</p>
+            <p>Inland Transport</p>
+            <p>Travellers Transport</p>
+        </div>
+        <div class="about-us">
+            <h1>Company</h1>
+            <p>About Us</p>
+            <p>Contact Us</p>
+            <p>Terms and condition</p>
+            <p>Privacy and conditions</p>
+        </div>
+        <div class="resourses">
+            <h1>Resourses</h1>
+            <p>Shiping Calculator</p>
+            <p>Our Bots</p>
+        </div>
+    </div>
+    <div class="footer-text-block">
+        <p>© 2019 mikejdelro</p>
+        <p>Founded in Dec of 2016, Afribaggage is a trusted community marketplace for people to send goods to and from Africa.
+            Afribaggage biggest goal is to sell the actualization of africa container using our portal as a medium to achive 
+            both intra/international and in cargo delivery from container to bulk, parcel, truck, shiploads, etc.
+        </p>
+    </div>
+    <div class="pull-right">
+                <a class="btn navbar-btn" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i> Subscribe</a>
+                &nbsp;
+                <!--<form class="navbar-btn pull-right hidden-xs" autocomplete="off">
+                    <input id="search-field" type="text"  placeholder="Search article"/>
+                </form>-->
+            </div>
+             {{#if @labs.members}}
+            <div class="col-md-10 hidden-xs hidden-sm">
+                <div class="subscribe-form">
+                    {{subscribe_form}}
+                </div>
+            </div>
+
+            {{/if}}
+</main>
+
+<style>
+    .footer {
+        width: 95%;
+        margin-top: 150px;
+    }
+    .menu-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    @media screen and (max-width: 1200px) {
+        .menu-block {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+</style>

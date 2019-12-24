@@ -1,0 +1,458 @@
+{{!< default}}
+
+<script>let a = 0 </script>
+
+<main>
+    <div class="main">
+        <div>
+            <p class="blog-title">{{ @blog.title }}</p>
+            <p class="blog-subtitle">{{ @blog.description }}</p>
+        </div>
+        <img src="/images/group52.png"/>
+    </div>
+    <div class="company">
+        <img src="/images/logos.png"/>
+    </div>
+    <div class="oval">
+        <img src="/images/Oval.png"/>
+        <img src="/images/Oval.png"/>
+        <img src="/images/Oval.png"/>
+    </div>
+    <div class="block">
+        <p class="text-block">Shipping Knowledge & Freight Resources</p>
+        <p class="border"></p>
+    </div>
+    <div class="main-post"> 
+        <div class="posts">
+            <div class="post-header">
+                <div class="header-block">
+                    <img src="/images/image 53.png"/> 
+                    <button class="header-button">Air Cargo</button>
+                </div>               
+            </div>
+            <div class="inner">
+
+
+    </div>
+            <div class="blog-posts">
+                {{#foreach posts}}
+                  {{#if @index}}
+                  <script>++a
+                      console.log(a)
+                  </script>
+                    <div class="post" id="{{@index}}">
+                       <div style="color: red">
+                           {{#is "author"}}
+                           {{#author}}
+                           {{name}}
+                           {{/author}}
+                           {{/is}}
+                       </div> 
+                    <h1><a href="{{url}}" class="post-title">{{title}}</a></h1>
+                    <div class="date-tags-block">
+                    <div><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time></div>
+                     <div class="separator"> | </div>
+                     <div class="post-tags"> {{tags separator=" | "}}</div>
+                    </div>
+                    
+                    {{#if feature_image}}
+                    <figure class="image">
+                      {{!-- <img src="{{feature_image}}"> --}}
+                    </figure>
+                    {{/if}}
+                  
+                   </div>
+                 {{/if}}     
+                {{/foreach}}
+                 <script>
+                       document.getElementById("2").className = "post2"
+                       document.getElementById("5").className = "post5"
+                       document.getElementById("3").className = "post2"
+                       document.getElementById("7").className = "post2"
+                        document.getElementById("8").className = "post2"
+                       document.getElementById("10").className = "post5"
+
+
+
+                </script>
+            </div>
+        </div>
+        <div class="main-card-block">
+          {{!-- <div class="cards-title">
+              <p>AVAILABLE  SHIPPING SPACES</p>
+            </div>
+          <div class="card-block">
+          <div>
+              <p>Some card</p>
+          </div>
+         </div> --}}
+        </div>
+    </div>
+     <div class="bottom-block">
+         <div class="bottom-block-1">
+           
+             <p class="subscribe-title">Subscribe</p>
+             <p class="subscribe-comment">Stay up to date! Get all the latest posts delivered straight to your inbox.</p>
+             <input placeholder="Your Email" class="bottom-input"/>
+             <button class="subscribe-button">Subscribe</button>
+         </div>
+         <div class="bottom-block-2">
+             <p class="bottom-title">WHAT CUSTOMERS ARE SAYING </p>
+             
+             <img src="/images/left-quote 1.png" class="quote-img" />
+             <p class="bottom-comment">The best service ever, my luggage actually arrived earlier than expected with everything in tact. Good work guys. I recommend this to everyone. It’s a must use</p>
+            
+         </div>
+     </div>
+     
+</main>
+
+<style>
+    main {
+        width: 98%;
+        margin: 2%;
+    }
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+        padding: 70px 0px;
+       overflow: hidden;
+    }
+    .main img {
+        width: 50%;
+    }
+    .blog-title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 98px;
+        color: #0D0D0D;
+        margin: 0;
+    }
+    .blog-subtitle {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 39px;
+        color: #0D0D0D;
+        opacity: 0.6;
+    }
+    .company {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .company img {
+        width: 90%;
+    }
+    .oval {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .oval img {
+        background: linear-gradient(180deg, #FC4655 0%, #5A5DD8 100%);
+        box-shadow: 1px 3px 10px #CCDFF6;
+        border-radius: 50%;
+        height: 15px;
+        width: 16px;
+        margin: 25px
+    }
+    .block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .text-block {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 37px;
+        width: 50%;
+        letter-spacing: 1px;
+        color: #000000;
+        opacity: 0.6;
+    }
+    .border {
+        width: 50%;
+        opacity: 0.5;
+        border: 1px solid #00000046;
+    }
+    .main-post {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      
+    }
+    .blog-posts {
+        display: flex;
+        width: 800px;
+        flex-wrap: wrap;
+    }
+    .post {
+        width: 45%;
+        margin: 2%;
+        background-color: rgba(255, 179, 0, 0.534); 
+        height: 200px;
+        width: 350px; 
+        padding: 1%;
+        border-radius: 20px;
+        background: radial-gradient(circle at top center, rgba(255, 206, 93, 0.972), #f1a54d);
+        color: white;
+    }
+    .post2 {
+        width: 45%;
+        margin: 2%;
+        background-color: rgba(0, 255, 21, 0.534); 
+        height: 200px; 
+        width: 350px; 
+        padding: 1%;
+        border-radius: 20px;
+        background: radial-gradient(circle at top center, rgba(149, 218, 189, 0.78), #06f083);
+        color: white;
+    }
+    .post5 {
+         width: 45%;
+        margin: 2%;
+        background-color: rgba(255, 8, 0, 0.534); 
+        height: 200px;
+        width: 800px; 
+        padding: 1%;
+        border-radius: 20px;
+        color: white;
+         background: radial-gradient(circle at top center, rgba(226, 86, 81, 0.794), #f00606);
+    }
+    .posts {
+        width: 100%;
+        
+    }
+    .post-title {
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .post-tags a {
+        text-decoration: none;
+        color: white;
+    }
+    .date-tags-block {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 95%;
+        bottom: 0px;
+
+    }
+    .separator {
+        margin: 5%
+    }
+    .post-header img {
+        height: 85px;
+        width: 75px;
+    }
+    .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+    }
+    .header-block {
+        display: flex;
+        align-items: center;
+        
+    }
+    .main-card-block {
+        height: 100%;
+    }
+    .cards-title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 49px;
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
+        letter-spacing: 1px;
+        color: #000000;
+    }
+    .card-block {
+        width: 20%;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .header-button {
+        background: #FFFFFF;
+        border: 1.7px solid #F01313;
+        box-sizing: border-box;
+        border-radius: 5px;
+        height: 73px;
+        width: 370px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .bottom-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+    }
+    .bottom-block-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+    }
+    .bottom-block-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+       
+    }
+    .bottom-title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 45px;
+        line-height: 37px;
+        /* or 74% */
+
+        display: flex;
+        align-items: flex-start;
+        letter-spacing: 1px;
+        color: #000000;
+
+    }
+    .subscribe-title {
+         font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 45px;
+        line-height: 37px;
+        /* or 74% */
+
+        display: flex;
+        align-items: flex-start;
+        letter-spacing: 1px;
+        color: #373742;
+    }
+    .bottom-input {
+        height: 40px;
+        width: 50%;
+        margin: 10px;
+        border: none;
+        padding: 5px;
+        font-size: 20px;
+    }
+    .bottom-input:focus {
+        outline: none;
+    }
+    .subscribe-button {
+        height: 50px;
+        width: 50%;
+        font-size: 20px;
+        color: white;
+        background-color: rgb(218, 57, 57);
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    .subscribe-comment {
+        font-family: PT Serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+    }
+    .image img {
+        height: 270px;
+        width: 300px;
+    }
+    .bottom-comment {
+        font-family: PT Serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        color: #373742;
+        position: absolute;
+
+        padding-top: 100px;
+    }
+    .quote-img {
+        position:relative;
+        right:380px; 
+        bottom:50px; 
+    }
+     @media screen and (max-width: 1200px) {
+         .main {
+             display: flex;
+             flex-direction: column;
+             width: 100%;
+         }
+         .main img {
+             height: 286px;
+             width: 205px
+         }
+         .blog-title, .blog-subtitle {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             font-size: 32px;
+             width: 100%
+         }
+         .quote-img {
+            right:230px; 
+            bottom:70px;
+            margin: 10px;
+         }
+           div {
+               font-size: 20px;
+           }
+           p {
+               font-size: 15px;
+           }
+        .blog-posts, .bottom-block {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .post, .post2, .post5 {
+            width: 95%;
+        }
+        .bottom-comment {
+            font-size: 20px;
+        }
+        .header-button {
+            display: none;
+        }
+        .post-header img {
+            height: 35px;
+            width: 31px;
+        }
+        .border {
+            display: none;
+        }
+        .text-block {
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        }
+</style>
+
+{{> footer}}
+
+

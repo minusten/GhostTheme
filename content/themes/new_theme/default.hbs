@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{! Page Meta }}
+        <title>{{meta_title}}</title>
+        <meta name="description" content="{{meta_description}}" />
+      <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+        {{! Ghost outputs important style and meta data with this tag }}
+        {{ghost_head}}
+{{!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> --}}
+{{!-- 
+        <script>Handlebars.registerHelper("log", function(something) {
+  console.log(something);
+});</script> --}}
+    </head>
+
+    <body class="{{body_class}}">
+
+        {{> header}}
+
+        <script>console.dir(window)</script>
+
+        <div class="content">
+            {{log '123'}}
+            {{{body}}}
+        </div>
+        {{!-- {{> carousel}} --}}
+        {{!-- {{> footer}} --}}
+        {{ghost_foot}}
+
+    </body>
+</html>
+
+ {{!-- <script src="https://unpkg.com/@tryghost/content-api@1.0.0/umd/content-api.min.js"></script> --}}
